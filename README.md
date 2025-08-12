@@ -1,6 +1,6 @@
 # VSCode Lamina 语言支持扩展
 
-<img src="./doc/assets/logo.svg" width="100%">
+<img src="./doc/assets/logo.jpg" width="100%">
 
 <div align="center">
 
@@ -53,6 +53,17 @@
 该扩展通过 `contributes.configuration` 提供以下配置项：
 
 - `lamina.interpreterPath`：设置 Lamina 解释器的路径。默认为空，用户可以通过状态栏选择解释器。
+
+## 打包插件
+
+运行在项目目录运行下面的命令：
+
+```shell
+vsce package
+vsce publish
+```
+
+
 
 ## 已知问题
 
