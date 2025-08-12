@@ -1,6 +1,6 @@
 # VSCode Lamina 语言支持扩展
 
-<img src="./doc/assets/logo.jpg" width="100%">
+<img src="https://github.com/Lamina-dev/LaminaVSCodePlugin/blob/main/doc/assets/logo.jpg?raw=true" width="100%">
 
 <div align="center">
 

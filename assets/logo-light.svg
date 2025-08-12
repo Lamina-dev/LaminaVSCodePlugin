@@ -5,7 +5,7 @@
    viewBox="0 0 120 120"
    version="1.1"
    id="svg6"
-   sodipodi:docname="logo-icon.svg"
+   sodipodi:docname="logo-light.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -22,8 +22,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="4.6374422"
-     inkscape:cx="65.337742"
-     inkscape:cy="64.583016"
+     inkscape:cx="84.744992"
+     inkscape:cy="60.701565"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
@@ -55,15 +55,15 @@
        y1="24.494898"
        x2="85.73214"
        y2="73.484695"
-       gradientTransform="matrix(1.3083051,0,0,1.6637779,-15.734079,-14.913373)"
+       gradientTransform="matrix(1.3083051,0,0,1.6637779,-31.259879,-18.794823)"
        gradientUnits="userSpaceOnUse">
       <stop
          offset="0"
-         style="stop-color:#2d5281;stop-opacity:1;"
+         style="stop-color:#000000;stop-opacity:1;"
          id="stop1-09" />
       <stop
          offset="1"
-         style="stop-color:#5688c5;stop-opacity:1;"
+         style="stop-color:#000000;stop-opacity:1;"
          id="stop2-4" />
     </linearGradient>
     <linearGradient
@@ -75,16 +75,16 @@
        x2="69.700966"
        y2="37.694351"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.5154862,0,0,1.5154862,-5.1116025,3.6890227)" />
+       gradientTransform="matrix(1.5154862,0,0,1.5154862,-16.971589,-3.426969)" />
     <linearGradient
        id="linearGradient22"
        inkscape:collect="always">
       <stop
-         style="stop-color:#2d5281;stop-opacity:1;"
+         style="stop-color:#000000;stop-opacity:1;"
          offset="0"
          id="stop22" />
       <stop
-         style="stop-color:#5688c5;stop-opacity:1;"
+         style="stop-color:#000000;stop-opacity:1;"
          offset="1"
          id="stop23" />
     </linearGradient>
@@ -92,34 +92,12 @@
   <!-- 主要图形 - 层叠的L形状 -->
   <!-- 装饰点 -->
   <path
-     d="m 16.312722,12.256006 v 81.508131 h 48.0702 V 73.387104 H 40.34782 V 12.256006 Z"
-     fill="#1a202c"
-     opacity="0.3"
-     id="path2"
-     style="stroke-width:1.47537" />
-  <path
-     d="M 24.324421,19.048348 V 100.55648 H 72.394622 V 80.179449 H 48.359519 V 19.048348 Z"
-     fill="#2d3748"
-     opacity="0.6"
-     id="path3"
-     style="stroke-width:1.47537" />
-  <path
-     d="m 32.336121,25.840693 v 81.508137 h 64.0936 V 86.971791 H 56.371222 V 25.840693 Z"
+     d="m 16.810321,21.959243 v 81.508137 h 64.0936 V 83.090341 H 40.845422 V 21.959243 Z"
      fill="url(#mainGrad)"
      id="path4"
      style="fill:url(#mainGrad-0);stroke-width:1.47537" />
   <path
-     d="m 95.058514,54.005535 h -9.21506 V 29.954711 L 79.185453,45.562417 H 72.792806 L 66.134805,29.954711 V 54.005535 H 57.402209 V 18.0861 H 68.161153 L 76.242423,36.106125 84.29957,18.0861 h 10.758944 z"
-     id="text12-3"
-     style="font-weight:bold;font-size:49.4043px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';opacity:0.3;fill:#4a5568;stroke-width:6.17553;stroke-opacity:0"
-     aria-label="M" />
-  <path
-     d="M 100.36272,60.067482 H 91.147657 V 36.016658 L 84.489656,51.624364 H 78.097009 L 71.439008,36.016658 V 60.067482 H 62.706412 V 24.148047 h 10.758944 l 8.08127,18.020025 8.057147,-18.020025 h 10.758947 z"
-     id="text12-9"
-     style="font-weight:bold;font-size:49.4043px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';opacity:0.6;fill:#4a5568;stroke-width:6.17553;stroke-opacity:0"
-     aria-label="M" />
-  <path
-     d="M 106.03394,65.460495 H 96.818884 V 41.409671 L 90.160882,57.017377 H 83.768236 L 77.110234,41.409671 V 65.460495 H 68.377638 V 29.54106 h 10.758945 l 8.081269,18.020025 8.057147,-18.020025 h 10.758941 z"
+     d="M 94.173954,58.344503 H 84.958898 V 34.293679 L 78.300896,49.901385 H 71.90825 L 65.250248,34.293679 V 58.344503 H 56.517652 V 22.425068 h 10.758945 l 8.081269,18.020025 8.057147,-18.020025 h 10.758941 z"
      id="text12"
      style="font-weight:bold;font-size:49.4043px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';fill:url(#linearGradient23);stroke-width:6.17553;stroke-opacity:0"
      aria-label="M" />
