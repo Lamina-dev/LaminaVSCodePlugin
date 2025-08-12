@@ -1,0 +1,91 @@
+{
+  "name": "lamina",
+  "displayName": "Lamina",
+  "description": "Lamina language support for Visual Studio Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:lamina",
+    "onCommand:extension.runLaminaScript"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "lamina",
+        "aliases": [
+          "Lamina",
+          "lamina"
+        ],
+        "extensions": [
+          ".lm"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./assets/logo-light.svg",
+          "dark": "./assets/logo-dark.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "lamina",
+        "scopeName": "source.lamina",
+        "path": "./syntaxes/lamina.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "lamina",
+        "path": "./snippets/lamina.code-snippets"
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.runLaminaScript",
+        "title": "Run Lamina Script",
+        "category": "Lamina",
+        "enablement": "editorLangId == lamina",
+        "icon": "./assets/logo-light.svg"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "extension.runLaminaScript",
+          "when": "editorLangId == lamina",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Lamina Configuration",
+      "properties": {
+        "lamina.interpreterPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the Lamina interpreter executable"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "npm run compile && node ./out/test/runTest.js"
+  },
+  "dependencies": {
+    "vscode": "^1.1.37"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1"
+  }
+}
