@@ -1,0 +1,161 @@
+{
+  "Print to console": {
+    "prefix": "print",
+    "body": [
+      "print(\"$1\");"
+    ],
+    "description": "Print to console"
+  },
+  "For loop": {
+    "prefix": "for",
+    "body": [
+      "for (var $1 = 0; $1 < $2; $1 = $1 + 1) {",
+      "  $3",
+      "}"
+    ],
+    "description": "For loop"
+  },
+  "While loop": {
+    "prefix": "while",
+    "body": [
+      "while ($1) {",
+      "  $2",
+      "}"
+    ],
+    "description": "While loop"
+  },
+  "If statement": {
+    "prefix": "if",
+    "body": [
+      "if ($1) {",
+      "  $2",
+      "}"
+    ],
+    "description": "If statement"
+  },
+  "If-else statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if ($1) {",
+      "  $2",
+      "} else {",
+      "  $3",
+      "}"
+    ],
+    "description": "If-else statement"
+  },
+  "Function declaration": {
+    "prefix": "func",
+    "body": [
+      "func $1($2) {",
+      "  $3",
+      "}"
+    ],
+    "description": "Function declaration"
+  },
+  "Variable declaration": {
+    "prefix": "var",
+    "body": [
+      "var $1 = $2;"
+    ],
+    "description": "Variable declaration"
+  },
+  "Big integer declaration": {
+    "prefix": "bigint",
+    "body": [
+      "bigint $1 = $2;"
+    ],
+    "description": "Big integer declaration"
+  },
+  "Include module": {
+    "prefix": "include",
+    "body": [
+      "include \"$1\";"
+    ],
+    "description": "Include a module"
+  },
+  "Square root": {
+    "prefix": "sqrt",
+    "body": [
+      "var $1 = sqrt($2);"
+    ],
+    "description": "Calculate square root"
+  },
+  "Pi constant": {
+    "prefix": "pi",
+    "body": [
+      "var $1 = pi();"
+    ],
+    "description": "Pi constant"
+  },
+  "Euler's number": {
+    "prefix": "e",
+    "body": [
+      "var $1 = e();"
+    ],
+    "description": "Euler's number"
+  },
+  "Absolute value": {
+    "prefix": "abs",
+    "body": [
+      "var $1 = abs($2);"
+    ],
+    "description": "Absolute value"
+  },
+  "Sine function": {
+    "prefix": "sin",
+    "body": [
+      "var $1 = sin($2);"
+    ],
+    "description": "Sine function"
+  },
+  "Cosine function": {
+    "prefix": "cos",
+    "body": [
+      "var $1 = cos($2);"
+    ],
+    "description": "Cosine function"
+  },
+  "Natural logarithm": {
+    "prefix": "log",
+    "body": [
+      "var $1 = log($2);"
+    ],
+    "description": "Natural logarithm"
+  },
+  "Vector addition": {
+    "prefix": "vadd",
+    "body": [
+      "var v1 = [$1, $2, $3];",
+      "var v2 = [$4, $5, $6];",
+      "var v3 = v1 + v2;"
+    ],
+    "description": "Vector addition"
+  },
+  "Vector dot product": {
+    "prefix": "vdot",
+    "body": [
+      "var v1 = [$1, $2, $3];",
+      "var v2 = [$4, $5, $6];",
+      "var dot_product = dot(v1, v2);"
+    ],
+    "description": "Vector dot product"
+  },
+  "Vector cross product": {
+    "prefix": "vcross",
+    "body": [
+      "var v1 = [$1, $2, $3];",
+      "var v2 = [$4, $5, $6];",
+      "var cross_product = cross(v1, v2);"
+    ],
+    "description": "Vector cross product"
+  },
+  "Matrix determinant": {
+    "prefix": "mdet",
+    "body": [
+      "var matrix = [[$1, $2], [$3, $4]];",
+      "var determinant = det(matrix);"
+    ],
+    "description": "Matrix determinant"
+  }
+}
