@@ -59,6 +59,7 @@
 运行在项目目录运行下面的命令：
 
 ```shell
+npm run compile
 vsce package
 vsce publish
 ```
