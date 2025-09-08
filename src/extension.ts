@@ -82,10 +82,31 @@ export function activate(context: vscode.ExtensionContext) {
     // 处理路径中的空格和特殊字
     const quotedInterpreterPath = interpreterPath.includes(' ') ? `"${interpreterPath}"` : interpreterPath;
     const quotedFilePath = filePath.includes(' ') ? `"${filePath}"` : filePath;
-    const command = `&${quotedInterpreterPath} ${quotedFilePath}`;
+    
+    // 获取自定义命令配置
+    const config = vscode.workspace.getConfiguration('lamina');
+    let activeCommand = config.get<string>('activeCommand');
+    
+    let command;
+    if (activeCommand) {
+      // 使用自定义命令
+      command = activeCommand
+        .replace('$interpreterPath', quotedInterpreterPath)
+        .replace('$scriptPath', quotedFilePath);
+    } else {
+      // 使用默认命令
+      if (process.platform === 'win32') {
+        // Windows
+        command = `&${quotedInterpreterPath} ${quotedFilePath}`;
+      } else {
+        // Linux/macOS
+        command = `${quotedInterpreterPath} ${quotedFilePath}`;
+      }
+    }
     
     const terminal = vscode.window.createTerminal({
       name: 'Lamina',
+      shellPath: process.platform === 'win32' ? undefined : '/bin/bash' // Linux/macOS 使用 bash
     });
     terminal.sendText(command);
     terminal.show();
@@ -95,15 +116,21 @@ export function activate(context: vscode.ExtensionContext) {
 
   // 注册选择解释器命令
   let selectInterpreterDisposable = vscode.commands.registerCommand('extension.selectLaminaInterpreter', async () => {
-    const interpreterPath = await vscode.window.showOpenDialog({
+    const dialogOptions: vscode.OpenDialogOptions = {
       canSelectFiles: true,
       canSelectFolders: false,
       canSelectMany: false,
-      openLabel: 'Select Lamina Interpreter',
-      filters: {
-        'Executable Files': ['exe', 'sh', 'bat', 'cmd'],
-      }
-    });
+      openLabel: 'Select Lamina Interpreter'
+    };
+
+    // Windows 下使用文件扩展名过滤器
+    if (process.platform === 'win32') {
+      dialogOptions.filters = {
+        'Executable Files': ['exe', 'bat', 'cmd']
+      };
+    }
+    
+    const interpreterPath = await vscode.window.showOpenDialog(dialogOptions);
 
     if (interpreterPath && interpreterPath[0]) {
       const config = vscode.workspace.getConfiguration('lamina');
@@ -162,8 +189,16 @@ async function getLaminaInterpreterPath(): Promise<string | undefined> {
 
 async function fileExists(filePath: string): Promise<boolean> {
   try {
-    await fs.promises.access(filePath);
-    return true;
+    const stats = await fs.promises.stat(filePath);
+    
+    // 在 Linux/macOS 上检查文件是否可执行
+    if (process.platform !== 'win32') {
+      // 检查所有者、组和其他用户的执行权限
+      return stats.isFile() && (stats.mode & 0o111) !== 0;
+    }
+    
+    // 在 Windows 上只检查文件是否存在
+    return stats.isFile();
   } catch {
     return false;
   }

@@ -1,0 +1,12 @@
+// Test input function
+print("Enter your name:");
+var name = input();
+print("Hello,", name);
+
+print("Enter a number:");
+var num = input();
+print("Number + 10 =", num + 10);
+
+print("Enter with prompt:");
+var value = input("Your age: ");
+print("You are", value, "years old");

@@ -53,6 +53,16 @@
 该扩展通过 `contributes.configuration` 提供以下配置项：
 
 - `lamina.interpreterPath`：设置 Lamina 解释器的路径。默认为空，用户可以通过状态栏选择解释器。
+- `lamina.activeCommand`：自定义运行 Lamina 脚本的命令格式。可以使用以下占位符：
+  - `$interpreterPath`：解释器路径
+  - `$scriptPath`：脚本文件路径
+  
+  示例配置：
+  - Windows PowerShell: `&$interpreterPath $scriptPath`
+  - Windows CMD: `$interpreterPath $scriptPath`
+  - Linux/macOS: `$interpreterPath $scriptPath`
+  
+  如果该配置项为空，将根据当前操作系统使用默认命令格式。
 
 ## 打包插件
 

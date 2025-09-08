@@ -76,6 +76,11 @@
           "type": "string",
           "default": "",
           "description": "Path to the Lamina interpreter executable"
+        },
+        "lamina.activeCommand": {
+          "type": "string",
+          "default": "",
+          "description": "Custom command to run Lamina scripts. Use $interpreterPath and $scriptPath as placeholders. If empty, default command will be used based on OS."
         }
       }
     }
