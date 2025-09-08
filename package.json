@@ -3,7 +3,7 @@
   "displayName": "Lamina",
   "description": "Lamina language support for Visual Studio Code",
   "publisher": "lamina-dev",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "icon": "./assets/logo-icon.png",
   "repository": {
     "type": "git",
