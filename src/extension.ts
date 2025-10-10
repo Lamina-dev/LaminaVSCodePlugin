@@ -48,7 +48,7 @@ export function activate(context: vscode.ExtensionContext) {
   updateStatusBar(statusBarItem);
 
   // 注册运行脚本命令
-  let runScriptDisposable = vscode.commands.registerCommand('extension.runLaminaScript', async () => {
+  async function runLaminaScript() {
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
       vscode.window.showInformationMessage('No editor is active.');
@@ -99,18 +99,21 @@ export function activate(context: vscode.ExtensionContext) {
         // Windows
         command = `&${quotedInterpreterPath} ${quotedFilePath}`;
       } else {
-        // Linux/macOS
+        // Unix-like
         command = `${quotedInterpreterPath} ${quotedFilePath}`;
       }
     }
-    
-    const terminal = vscode.window.createTerminal({
-      name: 'Lamina',
-      shellPath: process.platform === 'win32' ? undefined : '/bin/bash' // Linux/macOS 使用 bash
-    });
-    terminal.sendText(command);
+
+    // 创建终端并运行命令
+    const terminal = vscode.window.createTerminal('Lamina');
     terminal.show();
-  });
+    terminal.sendText(command);
+  }
+
+  let runDisposable = vscode.commands.registerCommand('lamina.run', runLaminaScript);
+  let runScriptDisposable = vscode.commands.registerCommand('extension.runLaminaScript', runLaminaScript);
+  context.subscriptions.push(runDisposable);
+  context.subscriptions.push(runScriptDisposable);
 
   context.subscriptions.push(runScriptDisposable);
 

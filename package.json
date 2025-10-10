@@ -3,7 +3,7 @@
   "displayName": "Lamina",
   "description": "Lamina language support for Visual Studio Code",
   "publisher": "lamina-dev",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "icon": "./assets/logo-icon.png",
   "repository": {
     "type": "git",
@@ -57,7 +57,17 @@
         "title": "Run Lamina Script",
         "category": "Lamina",
         "enablement": "editorLangId == lamina",
-        "icon": "./assets/logo-dark.svg"
+        "icon": {
+          "light": "./assets/logo-light.svg",
+          "dark": "./assets/logo-dark.svg"
+        }
+      },
+      {
+        "command": "lamina.run",
+        "title": "Run Code",
+        "category": "Lamina",
+        "enablement": "editorLangId == lamina",
+        "icon": "$(play)"
       }
     ],
     "menus": {
@@ -66,6 +76,18 @@
           "command": "extension.runLaminaScript",
           "when": "editorLangId == lamina",
           "group": "navigation"
+        },
+        {
+          "command": "lamina.run",
+          "when": "resourceLangId == lamina",
+          "group": "navigation@1"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "lamina.run",
+          "when": "resourceLangId == lamina",
+          "group": "navigation@1"
         }
       ]
     },
@@ -83,7 +105,15 @@
           "description": "Custom command to run Lamina scripts. Use $interpreterPath and $scriptPath as placeholders. If empty, default command will be used based on OS."
         }
       }
-    }
+    },
+    "keybindings": [
+      {
+        "command": "extension.runLaminaScript",
+        "key": "f5",
+        "mac": "f5",
+        "when": "editorTextFocus && editorLangId == lamina"
+      }
+    ]
   },
   "scripts": {
     "vscode:compile": "npm run compile",
